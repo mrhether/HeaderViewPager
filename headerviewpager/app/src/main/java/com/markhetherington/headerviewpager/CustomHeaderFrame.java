@@ -28,7 +28,7 @@ public class CustomHeaderFrame extends FrameLayout {
     public CustomHeaderFrame(Context context, AttributeSet attrs) {
         super(context, attrs);
         mGestureDetector = new GestureDetector(context, new YScrollDetector());
-        mostRecentCustomFrame= this;
+        mostRecentCustomFrame = this;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class CustomHeaderFrame extends FrameLayout {
                 yDistance += Math.abs(curY - lastY);
                 lastX = curX;
                 lastY = curY;
-                if(xDistance > yDistance) return false;
+                if (xDistance > yDistance) return false;
         }
 
         // If someone has set this touch to be safe it is our touch event.
@@ -61,8 +61,8 @@ public class CustomHeaderFrame extends FrameLayout {
         int measuredHeight = (int) -getTranslationY();
         int dimensionPixelOffset =
                 getContext().getResources().getDimensionPixelOffset(R.dimen.min_header_height)
-                - Utils.getActionBarHeight(getContext());
-        if (measuredHeight >= dimensionPixelOffset){
+                        - Utils.getActionBarHeight(getContext());
+        if (measuredHeight >= dimensionPixelOffset) {
             return super.onInterceptTouchEvent(ev);
         }
 

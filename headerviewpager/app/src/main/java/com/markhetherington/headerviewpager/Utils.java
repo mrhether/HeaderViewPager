@@ -11,6 +11,7 @@ import android.view.View;
 public class Utils {
 
     private static int mActionBarHeight;
+
     public static int getActionBarHeight(Context context) {
 
         TypedValue mTypedValue = new TypedValue();
